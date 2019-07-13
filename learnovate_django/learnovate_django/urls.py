@@ -24,9 +24,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     url('teacher/register', views.TeacherSignUpView.as_view(), name='register'),
-    url('playone/', views.viewVideo, name='play-video'),
-    url('playone/', views.viewVideo, name='play-video'),
+    url('playone/<int:resource_id>', views.viewVideo, name='play-video'),
     url('playall/', views.viewAllVideos, name='play-videos'),
+    url('viewpdf/<int:resource_id>', views.viewPDF, name='view-pdf'),
+    url('viewallpdfs/', views.viewAllPDFs, name='view-all-pdfs'),
+    path('like/<int:resource_id>/', views.like, name = "like"),
+    path('comment/<int:resource_id>/', views.comment, name = "comment"),
     #url('^onevideo$', views.view_all_resources, name = "view_all_resources"),
 ]
 

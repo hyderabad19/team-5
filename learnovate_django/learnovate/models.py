@@ -44,7 +44,7 @@ class Resource(models.Model):
     description = models.TextField()
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name="resources")
     created_at = models.DateTimeField(auto_now_add=True)
-    type = models.ForeignKey(ResourceType, on_delete=models.CASCADE, related_name='resources')
+    resource_type = models.ForeignKey(ResourceType, on_delete=models.CASCADE, related_name='resources')
 
     def __str__(self):
         return self.name
