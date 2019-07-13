@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
+from  imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 class User(AbstractUser):
     is_progman = models.BooleanField(default=False)
@@ -40,7 +41,8 @@ class ResourceType(models.Model):
 
 class Resource(models.Model):
     name = models.CharField(max_length=255)
-    file = models.FileField(null=True, blank=True)
+    vid= models.FileField(null=True, blank=True)
+    file = ImageSpecField(source='vid',processors=[ResizeToFill(100,50)],format='JPEG',options={'quality':60})
     description = models.TextField()
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name="resources")
     created_at = models.DateTimeField(auto_now_add=True)

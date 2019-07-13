@@ -21,10 +21,11 @@ from django.conf.urls.static import static
 from learnovate import views
 
 urlpatterns = [
+    url('playone/<int:resource_id>', views.viewVideo, name='play-video'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     url('teacher/register', views.TeacherSignUpView.as_view(), name='register'),
-    url('playone/<int:resource_id>', views.viewVideo, name='play-video'),
+    
     url('playall/', views.viewAllVideos, name='play-videos'),
     url('viewpdf/<int:resource_id>', views.viewPDF, name='view-pdf'),
     url('viewallpdfs/', views.viewAllPDFs, name='view-all-pdfs'),
