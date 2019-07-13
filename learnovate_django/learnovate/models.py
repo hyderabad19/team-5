@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class User(AbstractUser):
     is_progman = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
@@ -48,6 +49,7 @@ class Resource(models.Model):
     def __str__(self):
         return self.name
 
+
 class Comment(models.Model):
     user = models.ForeignKey(Teacher,on_delete=models.CASCADE, related_name='comments')
     text = models.TextField('Comments')
@@ -56,6 +58,7 @@ class Comment(models.Model):
     def __str__(self):
        return self.text
 
+
 class Like(models.Model):
     user = models.ForeignKey(Teacher,on_delete=models.CASCADE, related_name='likes')
     resource = models.ForeignKey(Resource,on_delete=models.CASCADE, related_name='likes')
@@ -63,6 +66,7 @@ class Like(models.Model):
 
     def __str__(self):
        return self.text
+
 
 class Notification(models.Model):
     icon = models.FileField(null=True, blank=True)

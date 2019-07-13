@@ -22,7 +22,9 @@ from learnovate import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('accounts/', include('django.contrib.auth.urls')),
+    url('teacher/register', views.TeacherSignUpView.as_view(), name='register'),
+    url('playone/', views.viewVideo, name='play-video'),
     url('playone/', views.viewVideo, name='play-video'),
     url('playall/', views.viewAllVideos, name='play-videos'),
     #url('^onevideo$', views.view_all_resources, name = "view_all_resources"),
