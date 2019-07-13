@@ -1,3 +1,45 @@
+body{
+   /* background-image: url("loginback.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;*/
+}
+.logindiv{
+   
+    width:500px;
+    height:600px;
+    margin-left:500px;
+    margin-top:100px;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab button.active {
+    background-color: #ccc;
+  }
+  #loginheading{
+      margin-top:20px;
+  }
+  #newuser{
+      padding:5px;
+      
+  }
 @media only screen and (max-width: 600px){
     .logindiv{
        
@@ -7,3 +49,4 @@
         margin-top:80px;
     }
 }
+    
