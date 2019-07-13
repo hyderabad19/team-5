@@ -12,7 +12,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -23,7 +23,7 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 15px;
-    color: #111;
+    color: #fff;
     display: block;
     transition: 0.3s;
 
@@ -39,8 +39,6 @@ body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    background-color: white;
-    color: #111;
 }
 
 .openbtn {
@@ -261,19 +259,6 @@ div.scrollmenu a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.fullScreen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-video {
-width: 100%;
-}
-iframe {
-    width: 100%;
-}
 .material-icons.md-48 { font-size: 48px;
     
     margin-left:20px; }
@@ -283,10 +268,17 @@ iframe {
 
 }
 #umail{
-     
+    color: rgba(255, 255, 255, 1); 
     margin-left:20px;
 }
 #userprofile{
-    background-color: rgba(255, 255, 255, 1); 
+    color: rgba(255, 255, 255, 1); 
+}
+hr{
+    height:1px;
+    border:0;
+    border-top:1px solid #fff;
+    margin:1em 0;
+    padding:0;
 }
 
