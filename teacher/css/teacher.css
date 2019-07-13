@@ -66,6 +66,7 @@ body {
     .sidebar a {
         font-size: 18px;
     }
+    
 }
 /* card slider */
 .card-carousel {
@@ -286,5 +287,10 @@ div.scrollmenu a:hover {
 }
 video, iframe {
     width: 100%;
+@media screen and (max-width:600px){
+    .demo-card__title{
+        font-size:20px;
+        margin-left:5px;
+    }
 }
 
