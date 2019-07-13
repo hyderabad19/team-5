@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from .models import Resource
-from .forms import VideoForm
 
 def viewVideo(request):
     v=Resource.objects.all()
     f=v[0]
-    context= {'name' : "test name"
+    context= {'name' : "test name",
               'file': f,
               'description': "test desription",
               'comment': "test comment",
