@@ -1,5 +1,7 @@
 <html>
     <head>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -24,7 +26,10 @@
                         <div class="subhead">
                           <span>Enter Email:</span>
                           <br>
-                          <input id="enterhere" type="text" placeholder="Enter here:">
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="sample3">
+                              <label class="mdl-textfield__label" for="sample3">Text...</label>
+                            </div>
                         </div>
                         <br>
                         <br>
