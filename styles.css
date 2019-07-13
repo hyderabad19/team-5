@@ -36,6 +36,10 @@ body{
   #loginheading{
       margin-top:20px;
   }
+  #newuser{
+      padding:5px;
+      
+  }
 @media only screen and (max-width: 600px){
     .logindiv{
        
