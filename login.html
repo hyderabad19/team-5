@@ -20,7 +20,7 @@
             <div id="teacher" class="tabcontent">
                 <div class="login">
                     
-                      <form>
+                      <div>
                         <div class="subhead">
                           <span>Enter Email:</span>
                           <br>
@@ -34,9 +34,9 @@
                           <input id="enterhere1" type="password" placeholder="Enter here:">
                         </div>
                         <br>
-                        <button id="login" class="loginbutton" onclick="">login</button>
-                        <h4 id="newuser"><a href="registerpage.html">New User??Register Here</a></h4> 
-                      </form>
+                        <button id="login" class="loginbutton" >login</button>
+                        <h5 id="newuser"><a href="register.html">New User??Register Here</a></h5> 
+                      </div>
                       <script type="text/javascript">
                        document.getElementById("login").onclick= function() {
                        var z = document.getElementById("enterhere").value;
@@ -46,7 +46,7 @@
                       }
                       else
                       {
-                        window.location.replace("http://www.google.com");
+                        window.location.replace('./teacher/teacher.html');
                       }
                       }
                       </script>
