@@ -156,16 +156,16 @@ div.scrollmenu a:hover {
 }
 
 .card {
-	display: grid;
-	grid-template-rows: 40% 1fr;
-	width: 400px;
 	background-color: white;
 	border-radius: 10px;
-	box-shadow: 0px 20px 20px rgba(0,0,0,0.4);
+    width: 100%;
+/*	box-shadow: 0px 20px 20px rgba(0,0,0,0.4);*/
 	position: relative;
 	font-family: 'Roboto', sans-serif;
 }
-
+.card-text {
+    text-align: center;
+}
 .card-img {
 	position: relative;
 	width: 100%;
