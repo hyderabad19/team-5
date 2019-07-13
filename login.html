@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <h1 id="loginheading"><em><center>LOGIN!!</center></em></h1>
+        <h1 id="loginheading"><em><center>LOGIN</center></em></h1>
         <div class="logindiv">
             <div class="tab">
                 <button class="tablinks" id="default" onclick="opentab(event, 'pgmnr')">Program Manager</button>
@@ -35,7 +35,7 @@
                         </div>
                         <br>
                         <button id="login" class="loginbutton" >login</button>
-                        <h5 id="newuser"><a href="register.html">New User??Register Here</a></h5> 
+                        <h5 id="newuser"><a href="register.html">Don't have an account?Register Here</a></h5> 
                       </div>
                       <script type="text/javascript">
                        document.getElementById("login").onclick= function() {
@@ -53,7 +53,43 @@
                   </div>
             </div>
             <div id="pgmnr" class="tabcontent">
-                pgmnr
+                <div class="login">
+                    
+                    <div>
+                      <div class="subhead">
+                        <span>Enter Email:</span>
+                        <br>
+                        <input id="enterid" type="text" placeholder="Enter here:">
+                      </div>
+                      <br>
+                      <br>
+                      <div class="subhead">
+                        <span>Enter Password:</span>
+                        <br>
+                        <input id="password" type="password" placeholder="Enter here:">
+                      </div>
+                      <br>
+                      <button id="login1" class="loginbutton" >login</button>
+                    </div>
+                    <script type="text/javascript">
+                      document.getElementById("login1").onclick= function()
+                       {
+                      var k = document.getElementById("enterid").value;
+                      
+                     var y = document.getElementById("password").value;
+                     if(k.length===0||y.length===0){
+                     alert("enter your name and password");
+                     }
+                     else
+                     {
+                       alert('hi');
+                       window.location.replace('./programmanager/programmanager.html');
+                     }
+                     }
+                     </script>
+                 </div>
+              
+                
             </div>
             <script>
                 function opentab(evt, user) {
