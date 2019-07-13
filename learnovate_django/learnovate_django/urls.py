@@ -20,6 +20,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('playone/', views.viewVideo, name='play-video'),
+    url('playall/', views.viewAllVideos, name='play-videos'),
+    #url('^onevideo$', views.view_all_resources, name = "view_all_resources"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
