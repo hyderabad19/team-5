@@ -7,7 +7,6 @@ class User(AbstractUser):
     is_progman = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
 
-
 class Teacher(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -41,8 +40,7 @@ class ResourceType(models.Model):
 
 class Resource(models.Model):
     name = models.CharField(max_length=255)
-    vid= models.FileField(null=True, blank=True)
-    file = ImageSpecField(source='vid',processors=[ResizeToFill(100,50)],format='JPEG',options={'quality':60})
+    file = models.FileField(null=True, blank=True)
     description = models.TextField()
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name="resources")
     created_at = models.DateTimeField(auto_now_add=True)
