@@ -39,26 +39,28 @@
             <div class="valid-feedback"> 
             </div>
       </div>
-
-
       <div class="col-md-4 mb-3">
             <label for="validationServer013">Confirm Password</label>
             <input type="password" id="txtConfirmPassword" class="form-control is-valid" placeholder="Password" required>
             <div class="valid-feedback"> 
             </div>
       </div>
-        <div class="col-md-4 mb-3">
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input is-invalid" id="invalidCheck33" required>
-        <label class="custom-control-label" for="invalidCheck33">Agree to terms and conditions</label>
-        <div class="invalid-feedback">
-          You must agree before submitting.
-        </div>
-      </div>
-    </div>
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
+
+
+
+
+      
+      
+          <div class="form-group">
+              <div class="col-xs-6 col-xs-offset-3">
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions
+                      </label>
+                  </div>
+              </div>
+          </div>
+
     <input type="button" id="btnSubmit" value="Submit" class="btn btn-primary btn-sm" type="submit">
 </div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -75,6 +77,16 @@
                 });
             });
         </script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+              $('input[type="checkbox"]').click(function(){
+                  
+                 if($(this).prop("checked") == false){
+                      alert("Please accept the terms and conditions");
+                  }
+              });
+          });
+      </script>
 
   </form>
   </html>
