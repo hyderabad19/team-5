@@ -1,0 +1,80 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<form>
+    <div align="center">
+    
+      <div class="col-md-4 mb-3">
+        <label for="validationServer013">First name</label>
+        <input type="text" class="form-control is-valid" id="validationServer013" placeholder="First name" required>
+        <div class="valid-feedback"> 
+        </div>
+      </div>
+      <!-- <br> -->
+      <div class="col-md-4 mb-3">
+        <label for="validationServer023">Last name</label>
+        <input type="text" class="form-control is-valid" id="validationServer023" placeholder="Last name" required>
+        <div class="valid-feedback">
+        </div>
+      </div>
+      <!-- <br> -->
+      <div class="col-md-4 mb-3">
+            <label for="validationServer013">User name</label>
+            <input type="text" class="form-control is-valid" id="validationServer013" placeholder="User name" required>
+            <div class="valid-feedback"> 
+            </div>
+    </div>
+      <div class="col-md-4 mb-3">
+            <label for="validationServer013">City</label>
+            <input type="text" class="form-control is-valid" id="validationServer013" placeholder="City" required>
+            <div class="valid-feedback"> 
+            </div>
+      </div>
+
+
+      <div class="col-md-4 mb-3">
+            <label for="validationServer013">Password</label>
+            <input type="password" id="txtPassword" class="form-control is-valid" placeholder="Password" required>
+            <div class="valid-feedback"> 
+            </div>
+      </div>
+
+
+      <div class="col-md-4 mb-3">
+            <label for="validationServer013">Confirm Password</label>
+            <input type="password" id="txtConfirmPassword" class="form-control is-valid" placeholder="Password" required>
+            <div class="valid-feedback"> 
+            </div>
+      </div>
+        <div class="col-md-4 mb-3">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input is-invalid" id="invalidCheck33" required>
+        <label class="custom-control-label" for="invalidCheck33">Agree to terms and conditions</label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    <input type="button" id="btnSubmit" value="Submit" class="btn btn-primary btn-sm" type="submit">
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#btnSubmit").click(function () {
+                    var password = $("#txtPassword").val();
+                    var confirmPassword = $("#txtConfirmPassword").val();
+                    if (password != confirmPassword) {
+                        alert("Passwords do not match.");
+                        return false;
+                    }
+                    return true;
+                });
+            });
+        </script>
+
+  </form>
+  </html>
