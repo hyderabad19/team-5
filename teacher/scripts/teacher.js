@@ -39,7 +39,27 @@ $('.my-card').click(function() {
   $(this).next().addClass('next');
 });
  
- 
+//Card layout
+var dark = document.getElementById("card-action-1");
+var light = document.getElementById("card-action-2");
+
+dark.onclick = function () {
+	document.getElementById("card-body").style.background = "#121212";
+	document.getElementById("card-body").style.color = "#A3A3A3";
+	document.getElementById("card-title").style.color = "white";
+	document.getElementById("card-img").style.background = "#1E1E1E";
+	document.getElementById("circle").style.background = "#A3A3A3";
+	document.getElementById("card-action").style.color = "white";
+}
+
+light.onclick = function () {
+	document.getElementById("card-body").style.background = "white";
+	document.getElementById("card-body").style.color = "#A3A3A3";
+	document.getElementById("card-title").style.color = "black";
+	document.getElementById("card-img").style.background = "#A3A3A3";
+	document.getElementById("circle").style.background = "#828282";
+	document.getElementById("card-action").style.color = "#6200EE";
+}
 // Keyboard nav
 $('html body').keydown(function(e) {
   if (e.keyCode == 37) { // left
