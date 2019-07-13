@@ -11,8 +11,68 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <div class="tabdiv">
-           
+        <h1 id="loginheading"><em><center>LOGIN!!</center></em></h1>
+        <div class="logindiv">
+            <div class="tab">
+                <button class="tablinks" id="default" onclick="opentab(event, 'pgmnr')">Program Manager</button>
+                <button class="tablinks" onclick="opentab(event, 'teacher')">Teacher</button>
+            </div>
+            <div id="teacher" class="tabcontent">
+                <div class="login">
+                    
+                      <form>
+                        <div class="subhead">
+                          <span>Enter Email:</span>
+                          <br>
+                          <input id="enterhere" type="text" placeholder="Enter here:">
+                        </div>
+                        <br>
+                        <br>
+                        <div class="subhead">
+                          <span>Enter Password:</span>
+                          <br>
+                          <input id="enterhere1" type="password" placeholder="Enter here:">
+                        </div>
+                        <br>
+                        <button id="login" class="loginbutton" onclick="">login</button>
+                        <h4 id="newuser"><a href="registerpage.html">New User??Register Here</a></h4> 
+                      </form>
+                      <script type="text/javascript">
+                       document.getElementById("login").onclick= function() {
+                       var z = document.getElementById("enterhere").value;
+                      var a = document.getElementById("enterhere1").value;
+                      if(z.length===0||a.length===0){
+                      alert("enter name and password");
+                      }
+                      else
+                      {
+                        window.location.replace("http://www.google.com");
+                      }
+                      }
+                      </script>
+                  </div>
+            </div>
+            <div id="pgmnr" class="tabcontent">
+                pgmnr
+            </div>
+            <script>
+                function opentab(evt, user) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(user).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+                document.getElementById("default").click();
+                </script>
         </div>
+        
+               
     </body>
 </html>
