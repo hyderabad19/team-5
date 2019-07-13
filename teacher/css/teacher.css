@@ -260,6 +260,9 @@ div.scrollmenu a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.mdc-card__actions {
+    display: block;
+}
 .material-icons.md-48 { font-size: 48px;
     
     margin-left:20px; }
@@ -275,13 +278,15 @@ div.scrollmenu a:hover {
 #userprofile{
     color: rgba(255, 255, 255, 1); 
 }
-hr{
+.sidebar hr{
     height:1px;
     border:0;
     border-top:1px solid #fff;
     margin:1em 0;
     padding:0;
 }
+video, iframe {
+    width: 100%;
 @media screen and (max-width:600px){
     .demo-card__title{
         font-size:20px;
