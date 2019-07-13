@@ -48,6 +48,29 @@ class Resource(models.Model):
     def __str__(self):
         return self.name
 
+class Comment(models.Model):
+    user = models.ForeignKey(Teacher,on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField('Comments')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+       return self.text
+
+class Like(models.Model):
+    user = models.ForeignKey(Teacher,on_delete=models.CASCADE, related_name='likes')
+    resource = models.ForeignKey(Resource,on_delete=models.CASCADE, related_name='likes')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+       return self.text
+
+class Notification(models.Model):
+    icon = models.FileField(null=True, blank=True)
+    resource = models.ForeignKey(Resource,on_delete=models.CASCADE, related_name='notifications')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+       return self.text
 
 #
 # class Question(models.Model):
