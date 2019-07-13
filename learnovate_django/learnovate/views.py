@@ -14,9 +14,14 @@ def viewVideo(request):
     return render(request, 'templates/view_video.html', context)
 
 def viewAllVideos(request):
-    v=Resource.objects.all()
+    f=Resource.objects.all()
     context= {'file': f,
               }
     
-      
+
     return render(request, 'templates/view_all.html', context)
+
+
+def homeView(request):
+    videos = Resource.objects.all()
+    return render(request, 'home.html', {'videos': videos})
