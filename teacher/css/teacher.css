@@ -287,5 +287,15 @@ hr{
         font-size:20px;
         margin-left:5px;
     }
+    .comments{
+    margin-top:15px;
+    }
+    .commenthead{
+     margin-left:10px;
+    }
+    .user{
+        margin-left:10px;
+    }
 }
+
 
