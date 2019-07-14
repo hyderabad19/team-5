@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Topic, ResourceType, Resource, User
+from .models import Category, Topic, ResourceType, Resource, User, Comment
 
 
 # Register your models here.
@@ -16,6 +16,7 @@ admin.site.register(Resource)
 admin.site.register(ResourceType)
 admin.site.register(Topic)
 admin.site.register(User)
+admin.site.register(Comment)
 
 admin.site.site_header = "Learnovate Admin"
 admin.site.site_title = "Learnovate Admin"

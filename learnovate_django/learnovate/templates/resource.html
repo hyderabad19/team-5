@@ -103,6 +103,8 @@
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="/learnovate/home/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="/learnovate/settings/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Settings</a>
+          <a class="mdl-navigation__link" href="/accounts/logout/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">logout</i>Logout</a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -125,6 +127,8 @@
 
                         <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                           <div class="mdl-card__title">
+{#                              {{ if resource.type ==  }}#}
+
                               <video width="100%" height="auto" controls>
                                   <source src="/media/{{ video.file }}" type="video/mp4">
                                   Your browser does not support the video tag.
@@ -134,9 +138,26 @@
                             {{ resource.name }}
                           </div>
                           <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                              Get Started
-                            </a>
+                            {{ resource.description }}
+                          </div>
+                          <div class="mdl-card__actions mdl-card--border">
+                                                   <div class="comments-list">
+                             {% for comment in comments %}
+                               <div class="media">
+                                   <p class="pull-right"><small>5 days ago</small></p>
+                                    <a class="media-left" href="#">
+                                      <img src="http://lorempixel.com/40/40/people/1/">
+                                    </a>
+                                    <div class="media-body">
+
+                                      <h4 class="media-heading user_name">{{ comment.user.username }}</h4>
+                                      {{ comment.text }}
+
+                                      <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                                    </div>
+                                  </div>
+                            {% endfor %}
+                   </div>
                           </div>
                           <div class="mdl-card__menu">
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">

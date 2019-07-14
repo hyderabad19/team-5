@@ -17,7 +17,9 @@ def viewAll(request):
 
 def ResourceDetail(request, resource_pk):
     resource = get_object_or_404(Resource, pk=resource_pk)
-    return render(request, 'resource.html', {'resource': resource})
+    comments = Comment.objects.filter(resource_id=resource.id)
+    return render(request, 'resource.html', {'resource': resource,
+    'comments' : comments })
 
     # context= {'name' : Resource.objects.get(resource_id=resource_id).name,
     #           'file': Resource.objects.get(resource_id=resource_id).file,

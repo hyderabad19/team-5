@@ -30,7 +30,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Learnovate">
     <meta name="apple-mobile-web-app-title" content="Learnovate">
-    <meta name="msapplication-starturl" content="/learnovate/home/">
+    <meta name="msapplication-starturl" content="/accounts/login/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" href="{% static 'app.png' %}">
@@ -103,6 +103,8 @@
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="/learnovate/home/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="/learnovate/settings/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Settings</a>
+          <a class="mdl-navigation__link" href="/accounts/logout/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">logout</i>Logout</a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -127,13 +129,18 @@
 
                         <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                           <div class="mdl-card__title">
-                              <video width="100%" height="auto" controls>
-                                  <source src="/media/{{ resources.file }}" type="video/mp4">
+                              {% if resource.resource_type.name == 'Video' %}
+                                                                <video width="100%" height="auto" controls>
+                                  <source src="/media/{{ resource.file }}" type="video/mp4">
                                   Your browser does not support the video tag.
                                 </video>
+                              {% else %}
+    <object style="height: 390px; width: 640px"><param name="movie" value="{{ resource.description }}"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/v1gTI4BOPUw?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></object>
+                              {% endif %}
+
                           </div>
                           <div class="mdl-card__supporting-text">
-                            {{ video.name }}
+                            {{ resource.name }}
                           </div>
                           <div class="mdl-card__actions mdl-card--border">
                             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/learnovate/resources/{{ resource.id }}/">
@@ -141,7 +148,7 @@
                             </a>
                           </div>
                           <div class="mdl-card__menu">
-                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <button onclick="share1('/media/{{ resources.file }}')" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                               <i class="material-icons">share</i>
                             </button>
                           </div>

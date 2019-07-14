@@ -49,8 +49,9 @@ class Resource(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(Teacher,on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
     text = models.TextField('Comments')
+    resource = models.ForeignKey(Resource,on_delete=models.CASCADE, related_name='comments', default=None)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
