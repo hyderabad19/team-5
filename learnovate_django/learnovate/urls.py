@@ -22,6 +22,9 @@ urlpatterns = [
 #     url('viewspecificresource/<int:resource_id>', views.viewOne, name='viewOne'),
 #     path('like/<int:resource_id>/', views.like, name = "like"),
 #     path('comment/<int:resource_id>/', views.comment, name = "comment"),
+#     path('history/<int:user_id>/', views.view_list, name = "history"),
+#     path('topicsearch/<str:name>/',views.topic_search,name='topicSearch'),
+#     path('categorysearch/<str:category>/',views.category_search,name='categorySearch'),
 #     #url('^onevideo$', views.view_all_resources, name = "view_all_resources"),
 # ]
 #

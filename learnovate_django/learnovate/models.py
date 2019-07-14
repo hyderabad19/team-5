@@ -73,6 +73,10 @@ class Notification(models.Model):
 
     def __str__(self):
        return self.text
+       
+class Video_log(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
 
 #
 # class Question(models.Model):
