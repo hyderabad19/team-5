@@ -320,4 +320,12 @@ video, iframe {
 .name {
     margin-right: 5px;
 }
-
+#preferences .checkbox{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+#preferences h6{
+    margin: auto;
+}
