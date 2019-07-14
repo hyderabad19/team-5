@@ -1,0 +1,12 @@
+{
+  "name": "Learnovate",
+  "short_name": "Learnovate",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "app.png"
+    }
+  ]
+}

@@ -25,6 +25,8 @@ def ResourceDetail(request, resource_pk):
     # return render(request, 'templates/view_pdf.html', context)
 
 
+def IndexView(request):
+    return redirect('/learnovate/home/')
 
 
 def like(request, resource_id):

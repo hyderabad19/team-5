@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^learnovate/', include('learnovate.urls', namespace='learnovate')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    url('', views.IndexView, name='index')
 ]
 
 
