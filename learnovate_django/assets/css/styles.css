@@ -213,3 +213,7 @@ _:-ms-input-placeholder, :root .demo-graph {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.align-center {
+    text-align: center;
+}

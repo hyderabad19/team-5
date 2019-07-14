@@ -12,13 +12,20 @@ def viewAll(request):
               } 
     return render(request, 'templates/view_all.html', context)
 
-def viewOne(request,resource_id):
-    context= {'name' : Resource.objects.get(resource_id=resource_id).name,
-              'file': Resource.objects.get(resource_id=resource_id).file,
-              'description': Description.objects.get(resource_id=resource_id).description,
-              'comment': Comment.objects.filter(resource_id=resource_id),
-              }
-    return render(request, 'templates/view_pdf.html', context)
+
+def ResourceDetail(request, resource_pk):
+    resource = get_object_or_404(Resource, pk=resource_pk)
+    return render(request, 'resource.html', {'resource': resource})
+
+    # context= {'name' : Resource.objects.get(resource_id=resource_id).name,
+    #           'file': Resource.objects.get(resource_id=resource_id).file,
+    #           'description': Description.objects.get(resource_id=resource_id).description,
+    #           'comment': Comment.objects.filter(resource_id=resource_id),
+    #           }
+    # return render(request, 'templates/view_pdf.html', context)
+
+
+
 
 def like(request, resource_id):
     new_like, created = Like.objects.get_or_create(user=Teacher.objects.get(user=request.user), resource_id=resource_id)
@@ -43,4 +50,4 @@ class TeacherSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('')
+        return redirect('/learnovate/home')

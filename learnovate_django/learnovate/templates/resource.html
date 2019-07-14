@@ -111,8 +111,6 @@
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
-
-            {% for video in videos %}
                 <div class="mdl-cell mdl-cell mdl-cell--8-col">
                     <!-- Wide card with share menu button -->
                     <style>
@@ -137,7 +135,7 @@
                                 </video>
                           </div>
                           <div class="mdl-card__supporting-text">
-                            {{ video.name }}
+                            {{ resource.name }}
                           </div>
                           <div class="mdl-card__actions mdl-card--border">
                             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -151,7 +149,6 @@
                           </div>
                         </div>
                   </div>
-            {% endfor %}
 
         </div>
       </main>

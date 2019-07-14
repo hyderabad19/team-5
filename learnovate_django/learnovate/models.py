@@ -1,7 +1,5 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from  imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
 
 class User(AbstractUser):
     is_progman = models.BooleanField(default=False)
