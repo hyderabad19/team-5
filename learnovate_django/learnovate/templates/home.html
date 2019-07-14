@@ -102,14 +102,13 @@
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">categories</i>Inbox</a>
+          <a class="mdl-navigation__link" href="/learnovate/home/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
 
-            {% for video in videos %}
+            {% for resource in resources %}
                 <div class="mdl-cell mdl-cell mdl-cell--8-col">
                     <!-- Wide card with share menu button -->
                     <style>
@@ -129,7 +128,7 @@
                         <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                           <div class="mdl-card__title">
                               <video width="100%" height="auto" controls>
-                                  <source src="/media/{{ video.file }}" type="video/mp4">
+                                  <source src="/media/{{ resources.file }}" type="video/mp4">
                                   Your browser does not support the video tag.
                                 </video>
                           </div>
@@ -137,8 +136,8 @@
                             {{ video.name }}
                           </div>
                           <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                              Get Started
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/learnovate/resources/{{ resource.id }}/">
+                              View
                             </a>
                           </div>
                           <div class="mdl-card__menu">

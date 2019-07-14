@@ -5,6 +5,8 @@ from django.contrib.auth import login
 from .models import User
 from django.views.generic import CreateView, ListView, UpdateView
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 def viewAll(request):
     v=Resource.objects.get(all)
@@ -36,8 +38,8 @@ def comment(request, resource_id):
     new_comment, created = Comment.objects.create(user=Teacher.objects.get(user=request.user), resource_id=resource_id)
 
 def homeView(request):
-    videos = Resource.objects.all()
-    return render(request, 'home.html', {'videos': videos})
+    resources = Resource.objects.all()
+    return render(request, 'home.html', {'resources': resources})
 
 
 class TeacherSignUpView(CreateView):
@@ -52,4 +54,4 @@ class TeacherSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('/learnovate/home')
+        return HttpResponseRedirect(reverse('learnovate:home'))

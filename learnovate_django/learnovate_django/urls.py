@@ -11,9 +11,10 @@ urlpatterns = [
     url(r'^learnovate/', include('learnovate.urls', namespace='learnovate')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    # url('', views.IndexView, name='index')
+    # url('/', views.IndexView, name='index')
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
@@ -26,7 +27,6 @@ urlpatterns = [
 # ]
 #
 #
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # urlpatterns += [
 #
 # ]
