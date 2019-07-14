@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Resource,Like,Teacher,Comment
+from .models import Resource,Like,Teacher,Comment, Category
 from .forms import TeacherSignUpForm
 from django.contrib.auth import login
 from .models import User
@@ -41,7 +41,9 @@ def comment(request, resource_id):
 
 def homeView(request):
     resources = Resource.objects.all()
-    return render(request, 'home.html', {'resources': resources})
+    categories = Category.objects.all()
+    return render(request, 'home.html', {'resources': resources,
+                                         'categories': categories})
 
 def view_list(request,user_id):
     v_list = Video_log.objects.filter(user_id=user_id)
