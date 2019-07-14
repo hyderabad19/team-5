@@ -39,6 +39,21 @@ def homeView(request):
     videos = Resource.objects.all()
     return render(request, 'home.html', {'videos': videos})
 
+def view_list(request,user_id):
+    v_list = Video_log.objects.filter(user_id=user_id)
+
+def category_search(request,category):
+    if name == r'^(decision) +' | name==r'^(Decision) +':
+        data=Resource.objects.filter(name="Decision Making")
+    if name==r'^(relation) +' | name==r'^(Relation) +':
+        data=Resource.objects.filter(name="Relationships")
+    if name==r'^(social) +' | name==r'^(Social) +':
+        data=Resource.objects.filter(name="Social Awareness")
+    if name==r'^(self) +' | name==r'^(Self) +':
+        data=Resource.objects.filter(name="Self Awareness")
+
+def topic_search(request,name):
+    data=Resource.objects.filter(category=category)
 
 class TeacherSignUpView(CreateView):
     model = User
